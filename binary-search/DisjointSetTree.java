@@ -47,3 +47,34 @@ class DisjointSet {
         }
     }
 }
+
+import java.util.Arrays;
+
+public class Client {
+    public static void main(String[] args) {
+        // Example usage
+        int setSize = 10;
+        DisjointSet disjointSet = new DisjointSet(setSize);
+
+// Create individual sets
+        for (int i = 0; i < setSize; i++) {
+            disjointSet.makeSet(i);
+        }
+
+// Perform union operations
+        disjointSet.union(0, 1);
+        disjointSet.union(2, 3);
+        disjointSet.union(4, 5);
+        disjointSet.union(6, 7);
+
+// Check if elements are in the same set
+        System.out.println(disjointSet.find(0) == disjointSet.find(1)); // Should print true
+        System.out.println(disjointSet.find(2) == disjointSet.find(3)); // Should print true
+        System.out.println(disjointSet.find(4) == disjointSet.find(5)); // Should print true
+        System.out.println(disjointSet.find(6) == disjointSet.find(7)); // Should print true
+        System.out.println(disjointSet.find(0) == disjointSet.find(2)); // Should print false
+
+    }
+
+}
+
