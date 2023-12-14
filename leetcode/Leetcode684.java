@@ -1,9 +1,11 @@
 class Solution {
     public int[] findRedundantConnection(int[][] edges) {
         int n = edges.length;
+        //1st index array. To make solution more intutive. As nodes are numbered 1 to n.
+        // Parent array keeps track of parent
         int[] parent = new int[n + 1];
         
-        // Initialize parent array
+        // Initialize parent array. It's same as making n different set. 
         for (int i = 0; i <= n; i++) {
             parent[i] = i;
         }
